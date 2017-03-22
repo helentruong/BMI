@@ -1,0 +1,54 @@
+﻿using System;
+
+namespace BMI
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			
+			//stock the result of the operation
+			double result = 0;
+
+			//Ask user first number
+			Console.WriteLine("Enter your weight in pounds:");
+			string stringFirstNumber = Console.ReadLine();
+			double firstNumber = Convert.ToDouble(stringFirstNumber);
+
+			//Ask user second number
+			Console.WriteLine("Enter your height in feet:");
+			string stringSecondNumber = Console.ReadLine();
+			double secondNumber = Convert.ToDouble(stringSecondNumber);
+
+			//calculation for BMI
+			result = firstNumber / secondNumber;
+
+			//output for BMI
+			Console.WriteLine("Your BMI is " + result.ToString("0.0"));
+
+			//if BMI is less than 18.5 you are underweight 
+			if (result < 18.5)
+			{
+				Console.WriteLine("You are underweight");
+			}
+			//if BMI is greater than 18.5 and less than 24.99 you are normal
+			if (result > 18.5 && result < 24.99)
+			{
+				Console.WriteLine("Your weight is normal");
+			}
+			//if BMI is greater than 25 and less than 29.9 you are underweight
+			if (result > 25 && result < 29.9)
+			{
+				Console.WriteLine("Your are overweight");
+			}
+			//if BMI is greater than or equal to 30 you are obese
+			if (result >= 30)
+			{
+				Console.WriteLine("You are obese");
+			}
+
+		}
+	}
+
+
+}
